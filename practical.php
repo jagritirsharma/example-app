@@ -1,5 +1,5 @@
 <?php
-
+namespace practicals;
 /**
  * Class Practical
  * Contains static functions for basic practical tasks.
@@ -22,6 +22,10 @@ class Practical
      */
     public static function add($num1, $num2)
     {
+         if (!is_numeric($num1) || !is_numeric($num2))
+         {
+           throw new \InvalidArgumentException('Arguments must be integers'):
+          }
         return $num1 + $num2;
     }
 
