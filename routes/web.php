@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use song;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,11 +17,20 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/veggies', function () 
-{
+
+Route::get('/veggies', function () {
 	return view('veggies');
 });
+
 Route::get('/veggies/{veggieName}',function (string $veggieName) {
 	return $veggieName;
 })->whereIn('veggieName', ['baigan','bhindi', 'aaloo', 'gobhi']);
 
+Route::get('/song', function () {
+  
+  $song = new Song();
+  $song->setTitle("With You");
+  $song->setArtist("A P Dhillon");
+
+  return view('song'); 
+});
