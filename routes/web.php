@@ -3,42 +3,33 @@
 use Illuminate\Support\Facades\Route;
 use Practicals\Song;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+
 
 Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/veggies/{sabji}', function ($sabji) {
+   
+    return $sabji;
+})->whereIn('sabji', ['baigan', 'bhindi', 'aaloo', 'gobhi']);
+
+Route::get('/greeting', function () {
+    return 'Hello World';
+});
+Route::get('/hello', function () {
+    return view('veggies');
+});
+
+// On route '/veggies 'a chart should be seen , with name and price of veggies
 Route::get('/veggies', function () {
-	return view('veggies');
+    return view('table');
 });
 
-Route::get('/veggies/{veggieName}',function (string $veggieName) {
-	return $veggieName;
-})->whereIn('veggieName', ['baigan','bhindi', 'aaloo', 'gobhi']);
-
-Route::get('/song', function () {
-  
-   $song1 = new Song("Stan", "Enimen", "pop", 74);
-  $song1->setTitle("Stan");
-  $song1->setArtist("Eminem");
-
-  $song2 = new Song("Nothing", "Metallica", "music", "72");
-  $song2->setTitle("Nothing Else Matters");
-  $song2->setArtist("Metallica");
-
-  $song3 = new Song("With you", "Hindi", "Pop", "71");
-  $song3->setTitle("With You");
-  $song3->setArtist("A P Dhillon");
-
-  return view('songs', [ 'songs' => [ $song1, $song2, $song3 ] ]);  
+Route::get('/songs', function () {
+    $song = new Song("one","two","three","four");
+    $song->setTitle("With You");
+    $song->setArtist("AP Dillon");
+    return view('songs',['songs' => $song]);
 });
+?>

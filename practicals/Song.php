@@ -1,10 +1,11 @@
 <?php
 
-namespace songs;
+namespace Practicals;
 // File: practicals/Song.php
 
-class Song {
+class Song{
     // Properties
+	
     private $title;
     private $artist;
     private $genre;
