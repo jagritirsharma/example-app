@@ -1,10 +1,11 @@
 <?php
 
 namespace Tests\Unit;
-use PHPUnit\Framework\TestCase;
 
-require_once __DIR__ . '/../.././tests/Unit/PracticalTest.php';  // Use require_once and correct the path
-use practicals\Practical1Test;
+use PHPUnit\Framework\TestCase;
+use practicals\practical; // Include the Practical class properly
+
+require(__DIR__ . '/../../practicals/practical.php');
 
 class PracticalTest extends TestCase
 {
@@ -13,9 +14,7 @@ class PracticalTest extends TestCase
      */
     public function testAdd(): void
     {
-        $this->assertEquals(4, Practical::add(1, 3));  // Reorder the arguments for consistency
+        $this->assertEquals(practical::add(1, 3), 4);
     }
 }
-
 ?>
-
