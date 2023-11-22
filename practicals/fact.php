@@ -1,20 +1,22 @@
 <?php
 // Function to calculate the factorial of a number
-function factorial($n) {
-    if ($n === 0 || $n === 1) {
+function calculateFactorial($number) {
+    // Base case: factorial of 0 or 1 is 1
+    if ($number === 0 || $number === 1) {
         return 1;
     } else {
-        return $n * factorial($n - 1);
+        // Recursive case: calculate factorial for numbers greater than 1
+        return $number * calculateFactorial($number - 1);
     }
 }
 
-// Example number
-$number = 5;
+// Example number for which factorial is calculated
+$numberToCalculate = 5;
 
 // Calculate the factorial
-$result = factorial($number);
+$resultFactorial = calculateFactorial($numberToCalculate);
 
 // Display the result
-echo "Factorial of $number is: $result\n";
+echo "Factorial of $numberToCalculate is: $resultFactorial\n";
 ?>
 
