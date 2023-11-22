@@ -3,9 +3,9 @@
 namespace Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
-use practicals\practical; // Include the Practical class properly
 
-require(__DIR__ . '/../../practicals/practical.php');
+require(__DIR__.'/../../practicals/Practical.php');
+use practicals\Practical;
 
 class PracticalTest extends TestCase
 {
@@ -14,7 +14,8 @@ class PracticalTest extends TestCase
      */
     public function testAdd(): void
     {
-        $this->assertEquals(practical::add(1, 3), 4);
+        $this->assertEquals(Practical::add(1,3), 4);
     }
 }
+
 ?>

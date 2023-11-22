@@ -1,4 +1,6 @@
 <?php
+namespace practicals;
+
 // File: practicals/Practical.php
 
 class Practical {
