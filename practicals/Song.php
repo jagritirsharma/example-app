@@ -1,4 +1,6 @@
 <?php
+
+namespace songs;
 // File: practicals/Song.php
 
 class Song {
@@ -43,12 +45,16 @@ class Song {
         $this->genre = $genre;
     }
 
-    // Getter and Setter functions for 'Tempo'
-    public function getTempo() {
+public function getTempo() {
         return $this->tempo;
     }
 
     public function setTempo($tempo) {
+        // Check if $tempo is a float
+        if (!is_numeric($tempo) || is_float($tempo)) {
+            throw new \InvalidArgumentException('Tempo must be a non-float numeric value.');
+        }
+
         $this->tempo = $tempo;
     }
 }
