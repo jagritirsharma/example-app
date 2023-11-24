@@ -26,12 +26,16 @@ Route::get('/veggies', function () {
     return view('table');
 });
 
+
 Route::get('/songs_static', function () {
-    $song = new Song("one","two","three",4);
-    $song->setTitle("With You");
-    $song->setArtist("AP Dillon");
-    return view('songs',['songs' => $song]);
+    return view('songs_static');
 });
+//Route::get('/songs_static', function () {
+  //  $song = new Song("one","two","three",4);
+    //$song->setTitle("With You");
+    //$song->setArtist("AP Dillon");
+    //return view('songs',['songs' => $song]);
+//});
 
 Route::get('/songs', function () {
     return view('songs', [ 'songs' => Song::all() ] );
