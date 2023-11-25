@@ -30,6 +30,9 @@ Route::get('/veggies', function () {
 Route::get('/songs_static', function () {
     return view('songs_static');
 });
+Route::get('playlists/{playlistId}', function (string $playlistId) {
+	return view('playlist',['songs'=> Song::all() ,'playlistId' => $playlistId]);
+});
 //Route::get('/songs_static', function () {
   //  $song = new Song("one","two","three",4);
     //$song->setTitle("With You");
