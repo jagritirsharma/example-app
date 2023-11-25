@@ -18,8 +18,6 @@
                     <td>Album 1</td>
                     <td>3:30</td>
                 </tr>
-            
-		<!-- Add more rows as needed -->
-@endforeach
+	   @endforeach
 	    </tbody>
         </table>
